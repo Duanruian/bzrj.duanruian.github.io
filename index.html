@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班主任节祝福</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #f9f7fe 0%, #e3f2fd 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .header h1 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4rem;
+            color: #e74c3c;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+            border-radius: 2px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3498db, #9b59b6);
+        }
+        
+        .card h2 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.2rem;
+            color: #2980b9;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h2 i {
+            margin-right: 15px;
+            color: #e74c3c;
+        }
+        
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 20px;
+            background: rgba(155, 89, 182, 0.1);
+            border-left: 4px solid #9b59b6;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .quote:before, .quote:after {
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            position: absolute;
+            opacity: 0.1;
+            color: #9b59b6;
+        }
+        
+        .quote:before {
+            content: "“";
+            top: -15px;
+            left: 10px;
+        }
+        
+        .quote:after {
+            content: "”";
+            bottom: -35px;
+            right: 10px;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        .class-name {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.5rem;
+            color: #e74c3c;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* 动画元素 */
+        .flower {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .balloon {
+            position: absolute;
+            font-size: 2.5rem;
+            z-index: 1;
+            animation: float 15s ease-in infinite;
+            bottom: -50px;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:nth-child(1) {
+            animation: fadeInLeft 1s ease 0.2s both;
+        }
+        
+        .card:nth-child(2) {
+            animation: fadeInRight 1s ease 0.4s both;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3rem;
+            }
+            
+            .card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 飘落的花朵 -->
+    <div id="flowers"></div>
+    
+    <!-- 上升的气球 -->
+    <div id="balloons"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>班主任节快乐</h1>
+            <p>在这个特别的日子里，请接受我们最诚挚的祝福和感谢！</p>
+        </div>
+        
+        <div class="content">
+            <div class="card">
+                <h2><i class="fas fa-heart"></i> 感恩有您</h2>
+                <p>亲爱的班主任，您就像一盏明灯，照亮了我们前行的道路。您不仅传授知识，更教会我们做人的道理。您的谆谆教诲，我们铭记在心；您的辛勤付出，我们感激不尽。</p>
+                
+                <div class="quote">
+                    一支粉笔两袖清风，三尺讲台四季晴雨，加上五脏六腑，七嘴八舌九思十分用心，滴滴汗水诚滋桃李芳天下！
+                </div>
+                
+                <p>您总是最早到教室，最晚离开；您关心每一位同学的成长，用心倾听我们的烦恼。您不仅是我们的老师，更是我们的朋友和家人。</p>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-star"></i> 衷心祝福</h2>
+                <p>在这个属于您的节日里，我们想对您说：老师，您辛苦了！愿您的生活充满阳光，愿您的每一天都洋溢着幸福的笑容。</p>
+                
+                <p>感谢您用智慧引导我们，用爱心温暖我们，用耐心陪伴我们。您是我们成长路上最美的风景，是我们青春岁月里最温暖的记忆。</p>
+                
+                <div class="quote">
+                    十年树木，百年树人。班主任的教诲之恩，我们终身难忘！
+                </div>
+                
+                <p>愿您身体健康，工作顺利，家庭幸福！愿所有的美好都与您相伴，所有的快乐都为围绕在您身边！</p>
+                
+                <div class="signature">
+                    <p>敬爱您的学生们</p>
+                    <div class="class-name">19(6)班 全体同学</div>
+                    <p>2025年班主任节</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>感谢您为我们付出的一切！❤️</p>
+        </div>
+    </div>
+    
+    <script>
+        // 创建飘落的花朵
+        function createFlowers() {
+            const flowersContainer = document.getElementById('flowers');
+            const flowerIcons = ['🌸', '🌺', '🌷', '🌼', '💐', '🌻', '🌹'];
+            
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.innerHTML = flowerIcons[Math.floor(Math.random() * flowerIcons.length)];
+                
+                // 随机位置和大小
+                const size = Math.random() * 1.5 + 1;
+                flower.style.fontSize = `${size}rem`;
+                flower.style.left = `${Math.random() * 100}vw`;
+                flower.style.top = `${-Math.random() * 100}px`;
+                
+                // 随机动画时间和延迟
+                const duration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+                flower.style.animation = `fall ${duration}s linear ${delay}s infinite`;
+                
+                flowersContainer.appendChild(flower);
+            }
+        }
+        
+        // 创建上升的气球
+        function createBalloons() {
+            const balloonsContainer = document.getElementById('balloons');
+            const balloonColors = ['🎈', '🎈', '🎈', '🎈'];
+            
+            for (let i = 0; i < 12; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.innerHTML = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                
+                // 随机位置
+                balloon.style.left = `${Math.random() * 100}vw`;
+                
+                // 随机动画时间和延迟
+                const duration = Math.random() * 10 + 15;
+                const delay = Math.random() * 10;
+                balloon.style.animation = `float ${duration}s ease-in ${delay}s infinite`;
+                
+                balloonsContainer.appendChild(balloon);
+            }
+        }
+        
+        // 初始化页面
+        window.onload = function() {
+            createFlowers();
+            createBalloons();
+        };
+    </script>
+</body>
+</html>
